@@ -19,6 +19,21 @@ I have cloned the repo from git the kink is given below
 1 command is creating Dockerfile
 
  sudo nano Dockerfile
+ 
+ #use the base image with java installed
+FROM openjdk:17-jdk-slim
+
+#set the working directory in the container
+WORKDIR /app
+
+#copy the compiled java application class files into the container
+COPY Ram/bin/*.class /app
+
+#Add the source java files into the container
+COPY Ram/src /app/src
+
+#commant to compile and run the java application
+CMD ["java","src.dddd.SimpleCalculator"]
 
 <img width="410" alt="Capture PNG2" src="https://github.com/devarajareddy92/tasks/assets/138653409/0305712f-1db5-4aaf-a6ad-5ccb819b9974">
 
